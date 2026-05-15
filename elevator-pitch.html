@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meet-e — Elevator Pitch</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #0f0f1a;
+    color: #e2e8f0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .page {
+    max-width: 860px;
+    width: 100%;
+    background: #1a1a2e;
+    border-radius: 16px;
+    border: 1px solid #2d2d4e;
+    overflow: hidden;
+  }
+  .hero {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #ec4899 100%);
+    padding: 3rem 3rem 2.5rem;
+    position: relative;
+  }
+  .hero-eyebrow {
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    opacity: .8;
+    margin-bottom: .75rem;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -.02em;
+    line-height: 1;
+    margin-bottom: .5rem;
+  }
+  .hero-sub {
+    font-size: 1.1rem;
+    opacity: .85;
+    max-width: 520px;
+    line-height: 1.5;
+    margin-top: .75rem;
+  }
+  .hero-kpi {
+    position: absolute;
+    top: 2.5rem;
+    right: 3rem;
+    text-align: right;
+  }
+  .kpi-number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+  .kpi-label {
+    font-size: .75rem;
+    opacity: .75;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+  }
+
+  .body { padding: 2.5rem 3rem; }
+
+  .problem-solution {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .ps-box {
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+  }
+  .ps-box.problem { background: #2d1b1b; border: 1px solid #5c2020; }
+  .ps-box.solution { background: #1b2d1b; border: 1px solid #205c20; }
+  .ps-label {
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: .6rem;
+  }
+  .ps-box.problem .ps-label { color: #f87171; }
+  .ps-box.solution .ps-label { color: #4ade80; }
+  .ps-box p { font-size: .9rem; line-height: 1.6; color: #cbd5e1; }
+
+  .how-section { margin-bottom: 2.5rem; }
+  .how-section h2 {
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #7c3aed;
+    margin-bottom: 1.25rem;
+  }
+  .timeline {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+  .phase {
+    flex: 1;
+    padding: .75rem .5rem;
+    text-align: center;
+    font-size: .72rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .phase span { display: block; font-weight: 400; font-size: .65rem; opacity: .8; margin-top: .15rem; }
+  .phase.p1 { background: #4f46e5; }
+  .phase.p2 { background: #6d28d9; }
+  .phase.p3 { background: #7c3aed; }
+  .phase.p4 { background: #a855f7; }
+  .phase.deadline {
+    background: #ec4899;
+    flex: .6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .timeline-caption {
+    font-size: .78rem;
+    color: #94a3b8;
+    text-align: center;
+  }
+
+  .three-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .col-box {
+    border: 1px solid #2d2d4e;
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+  .col-icon { font-size: 1.5rem; margin-bottom: .5rem; }
+  .col-box h3 { font-size: .85rem; font-weight: 700; margin-bottom: .4rem; color: #e2e8f0; }
+  .col-box p { font-size: .78rem; color: #94a3b8; line-height: 1.5; }
+
+  .stack-row {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+  .stack-pill {
+    background: #1e1e3a;
+    border: 1px solid #3d3d6e;
+    border-radius: 20px;
+    padding: .3rem .85rem;
+    font-size: .75rem;
+    color: #a5b4fc;
+    font-weight: 500;
+  }
+
+  .footer-bar {
+    background: linear-gradient(135deg, #4f46e5, #ec4899);
+    padding: 1.25rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-bar .tagline {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -.01em;
+  }
+  .footer-bar .version {
+    font-size: .75rem;
+    opacity: .75;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <div class="hero-eyebrow">AI Meeting Orchestrator</div>
+    <h1>Meet-e</h1>
+    <p class="hero-sub">Turn your meetings into deadlines for async collaboration — so the meeting only happens if you actually need it.</p>
+    <div class="hero-kpi">
+      <div class="kpi-number">~70%</div>
+      <div class="kpi-label">meetings can be<br>cancelled before they start</div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <div class="problem-solution">
+      <div class="ps-box problem">
+        <div class="ps-label">The Problem</div>
+        <p>Most meetings exist to align people on a document or decision. But participants arrive unprepared, the first hour is spent reading what should have been pre-read, and a follow-up meeting gets scheduled to finish the conversation.</p>
+      </div>
+      <div class="ps-box solution">
+        <div class="ps-label">The Solution</div>
+        <p>Meet-e makes async work explicit and AI-supervised. The meeting becomes a deadline. Participants read, comment, and approve on their own schedule. If everyone agrees before the deadline — the meeting cancels itself.</p>
+      </div>
+    </div>
+
+    <div class="how-section">
+      <h2>How it works</h2>
+      <div class="timeline">
+        <div class="phase p1">PRE-READ<span>Read document</span></div>
+        <div class="phase p2">COMMENT<span>Add feedback</span></div>
+        <div class="phase p3">REFLECT<span>Resolve threads</span></div>
+        <div class="phase p4">APPROVE<span>Sign off</span></div>
+        <div class="phase deadline">📅<span>Deadline</span></div>
+      </div>
+      <p class="timeline-caption">AI agent monitors progress hourly — nudges the quiet ones, generates the summary, cancels the meeting if everyone's aligned.</p>
+    </div>
+
+    <div class="three-cols">
+      <div class="col-box">
+        <div class="col-icon">📋</div>
+        <h3>Structured by design</h3>
+        <p>Organizer picks a document template (decision record, kickoff, retro). Phases and timing are defined upfront in a simple YAML config.</p>
+      </div>
+      <div class="col-box">
+        <div class="col-icon">🤖</div>
+        <h3>AI does the herding</h3>
+        <p>Claude Code agent runs hourly. It posts phase announcements, nudges silent reviewers, generates the final summary, and updates the KPI tracker.</p>
+      </div>
+      <div class="col-box">
+        <div class="col-icon">📊</div>
+        <h3>Tracks hours saved</h3>
+        <p>Every cancelled meeting adds to a running total in the GitHub README. Concrete ROI, visible to the whole team.</p>
+      </div>
+    </div>
+
+    <div class="how-section">
+      <h2>Built on your existing stack</h2>
+    </div>
+    <div class="stack-row">
+      <div class="stack-pill">GitHub (config + state)</div>
+      <div class="stack-pill">Confluence (document + comments)</div>
+      <div class="stack-pill">Claude Code (AI agent)</div>
+      <div class="stack-pill">Outlook / iOS Calendar (trigger)</div>
+      <div class="stack-pill">Jira (v2 — task tracking)</div>
+      <div class="stack-pill">Slack (v2 — notifications)</div>
+    </div>
+
+  </div>
+
+  <div class="footer-bar">
+    <div class="tagline">The meeting that cancels itself.</div>
+    <div class="version">Meet-e v1 · 2026</div>
+  </div>
+
+</div>
+</body>
+</html>
