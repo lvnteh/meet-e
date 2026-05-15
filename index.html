@@ -14,17 +14,15 @@
     --accent-glow: rgba(124, 58, 237, 0.25);
     --text-main: #e2e8f0;
     --text-muted: #94a3b8;
-    
-    /* Phase Colors — purple to pink progression */
-    --phase-1: #6366f1; /* indigo */
-    --phase-2: #7c3aed; /* violet */
-    --phase-3: #9333ea; /* purple */
-    --phase-4: #a855f7; /* light purple */
-    --phase-5: #ec4899; /* pink */
+    --phase-1: #6366f1;
+    --phase-2: #7c3aed;
+    --phase-3: #9333ea;
+    --phase-4: #a855f7;
+    --phase-5: #22c55e; /* deadline is a win */
   }
-  
+
   * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
-  
+
   body {
     background-color: var(--bg);
     color: var(--text-main);
@@ -37,7 +35,7 @@
     background-image: radial-gradient(circle at 50% 0%, #1a0b2e 0%, transparent 45%);
     font-size: 18px;
   }
-  
+
   .container {
     max-width: 1200px;
     width: 100%;
@@ -46,9 +44,8 @@
     gap: 2.5rem;
   }
 
-  /* --- Hero Section --- */
   .hero { text-align: center; padding: 4rem 0 3rem; position: relative; }
-  
+
   .brand-badge {
     display: inline-flex; align-items: center; gap: 12px;
     background: rgba(255,255,255,0.03); border: 1px solid var(--border);
@@ -60,7 +57,7 @@
   .brand-name { font-weight: 800; font-size: 1rem; color: #fff; letter-spacing: 0.05em; }
   .badge-divider { width: 1px; height: 14px; background: var(--border); }
   .hero-eyebrow { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #a5b4fc; }
-  
+
   .hero h1 {
     font-size: 5rem; font-weight: 800; line-height: 1.1;
     margin-bottom: 2rem; letter-spacing: -0.04em;
@@ -68,15 +65,14 @@
 
   .strike { text-decoration: line-through; color: #444; font-weight: 600; }
   .glow-text { color: #fff; text-shadow: 0 0 35px var(--accent-glow); }
-  
+
   .hero-sub {
     font-size: 1.35rem; font-weight: 500; color: var(--text-main);
     opacity: 0.85; max-width: 650px; margin: 0 auto; line-height: 1.7;
   }
 
-  /* --- Bento Grid --- */
   .bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-  
+
   .card {
     background: var(--card); border: 1px solid var(--border);
     border-radius: 24px; padding: 3rem;
@@ -85,12 +81,12 @@
     display: flex; flex-direction: column;
     box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
   }
-  
+
   .card:hover {
     border-color: rgba(124, 58, 237, 0.25);
     box-shadow: 0 20px 40px -10px rgba(0,0,0,0.7), 0 0 20px rgba(124, 58, 237, 0.12);
   }
-  
+
   .card-label {
     font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em;
     text-transform: uppercase; margin-bottom: 1.25rem;
@@ -99,14 +95,13 @@
   .label-problem { color: #f87171; }
   .label-solution { color: #4ade80; }
   .label-neutral { color: var(--accent); }
-  
+
   .card-text { font-size: 1.1rem; color: #cbd5e1; line-height: 1.7; }
   .card-text strong { color: #c4b5fd; font-weight: 600; }
 
   .span-2 { grid-column: span 2; }
   .span-3 { grid-column: span 3; }
 
-  /* --- Special Cards --- */
   .ai-kb-card {
     background: linear-gradient(135deg, #111 0%, #170a29 100%);
     border-color: rgba(124, 58, 237, 0.2);
@@ -123,59 +118,47 @@
   }
   .kpi-label { font-size: 0.95rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; line-height: 1.5; font-weight: 600;}
 
-  /* --- Gamified Timeline --- */
   .timeline-container { display: flex; flex-direction: column; gap: 2rem; }
-  .timeline { 
-    display: flex; background: #0a0a0a; border: 1px solid var(--border); 
-    border-radius: 12px; overflow: hidden; 
+  .timeline {
+    display: flex; background: #0a0a0a; border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden;
   }
-  
-  .phase { 
-    flex: 1; text-align: center; padding: 1.5rem 0.5rem; 
+
+  .phase {
+    flex: 1; text-align: center; padding: 1.5rem 0.5rem;
     border-right: 1px solid var(--border);
     transition: background 0.3s ease;
   }
   .phase:last-child { border-right: none; }
-  
-  /* The Colorful Stages */
+
   .phase-1 { border-top: 3px solid var(--phase-1); background: rgba(59, 130, 246, 0.03); }
   .phase-2 { border-top: 3px solid var(--phase-2); background: rgba(234, 179, 8, 0.03); }
   .phase-3 { border-top: 3px solid var(--phase-3); background: rgba(168, 85, 247, 0.03); }
   .phase-4 { border-top: 3px solid var(--phase-4); background: rgba(34, 197, 94, 0.03); }
-  .phase-5 { border-top: 3px solid var(--phase-5); background: rgba(236, 72, 153, 0.08); }
-  
+  .phase-5 { border-top: 3px solid var(--phase-5); background: rgba(34, 197, 94, 0.08); }
+
   .phase:hover { filter: brightness(1.3); }
 
   .phase-title { font-size: 0.8rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem; letter-spacing: 0.05em; }
   .phase-sub { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
   .phase-5 { display: flex; flex-direction: column; justify-content: center; }
 
-  /* --- 3 Cols Inside Grid --- */
   .col-icon { font-size: 2rem; margin-bottom: 1.25rem; }
   .col-title { font-size: 1.15rem; font-weight: 700; color: #e2e8f0; margin-bottom: 0.75rem; }
 
-  /* --- Stack Pills --- */
   .stack-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
-  .stack-pill { 
-    background: #151515; border: 1px solid rgba(255,255,255,0.1); 
-    border-radius: 100px; padding: 0.75rem 1.25rem; font-size: 0.9rem; 
+  .stack-pill {
+    background: #151515; border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 100px; padding: 0.75rem 1.25rem; font-size: 0.9rem;
     color: #cbd5e1; font-weight: 500;
     transition: all 0.2s ease;
   }
   .stack-pill:hover { background: #222; border-color: rgba(255,255,255,0.2); color: #fff; }
 
-  /* --- Footer --- */
   .footer-bar {
     display: flex; justify-content: space-between; align-items: center;
     padding: 3rem 0; margin-top: 3rem;
     position: relative;
-  }
-  .footer-bar::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 60% 120% at 50% 0%, rgba(124, 58, 237, 0.07) 0%, rgba(236, 72, 153, 0.03) 60%, transparent 100%);
-    pointer-events: none;
   }
   .footer-bar::after {
     content: '';
@@ -184,31 +167,21 @@
     height: 1px;
     background: linear-gradient(to right, transparent, rgba(124, 58, 237, 0.6), rgba(236, 72, 153, 0.4), transparent);
   }
-  }
   .footer-left-sub { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.5rem; font-weight: 500;}
-
-  .tagline {
-    font-weight: 800; font-size: 1.2rem;
-    color: #e2e8f0;
-  }
-  
+  .tagline { font-weight: 800; font-size: 1.2rem; color: #e2e8f0; }
   .version { font-size: 0.9rem; color: var(--text-muted); font-weight: 500;}
 
-  /* --- Mobile Responsiveness --- */
   @media (max-width: 950px) {
     .bento-grid { grid-template-columns: 1fr; }
     .span-2, .span-3 { grid-column: span 1; }
     .ai-kb-card { flex-direction: column; gap: 1.5rem; }
     .timeline { flex-direction: column; }
     .phase { border-right: none; border-bottom: 1px solid var(--border); padding: 1.5rem; border-top: none; border-left: 3px solid transparent;}
-    
-    /* Adjust borders for mobile layout */
     .phase-1 { border-left-color: var(--phase-1); }
     .phase-2 { border-left-color: var(--phase-2); }
     .phase-3 { border-left-color: var(--phase-3); }
     .phase-4 { border-left-color: var(--phase-4); }
     .phase-5 { border-left-color: var(--phase-5); }
-    
     .hero h1 { font-size: 3.5rem; }
     .footer-bar { flex-direction: column; gap: 1.5rem; text-align: center; }
   }
@@ -216,28 +189,29 @@
 </head>
 <body>
 <div class="container">
-  
+
   <div class="hero">
     <div class="brand-badge">
       <span class="brand-name">Meet-e</span>
       <div class="badge-divider"></div>
       <span class="hero-eyebrow">✨ Meetings for the Age of AI</span>
     </div>
-    
     <h1>The <span class="strike">Meeting</span> <br><span class="glow-text">Deadline.</span></h1>
-    <p class="hero-sub">What if your meeting could cancel <em>itself</em>? 🎉</p>
+    <p class="hero-sub">What if your meeting could cancel <em>itself ?</em> 🎉
+
+</p>
   </div>
 
   <div class="bento-grid">
-    
+
     <div class="card">
       <div class="card-label label-problem">The Problem</div>
-      <p class="card-text">Some meetings are just live reading sessions. Participants arrive unprepared, hours are wasted catching up, and a follow-up is inevitably scheduled to finish the actual work.</p>
+      <p class="card-text">Some meetings are just reading sessions. Inefficient. You spend 40 minutes catching up on what a document could have covered in five.</p>
     </div>
 
     <div class="card span-2" style="border-color: rgba(124, 58, 237, 0.5); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.7), 0 0 20px var(--accent-glow);">
       <div class="card-label label-solution">The Solution</div>
-      <p class="card-text">Meet-e makes async work explicit and AI-supervised. The meeting becomes a deadline. Participants read, comment, and approve on their own schedule. If everyone agrees before the deadline — the meeting cancels itself.</p>
+      <p class="card-text">Meet-e turns the meeting into a deadline.  AI keeps everyone moving. Participants read, comment, and approve async. If the team agrees before the deadline — the meeting cancels itself. No rescheduling. No follow-up. Done.</p>
     </div>
 
     <div class="card span-3 ai-kb-card">
@@ -245,7 +219,7 @@
       <div>
         <div class="card-label" style="color: #a5b4fc;">The Context Layer</div>
         <h3>Every <span style="text-decoration:line-through;opacity:.45">skipped</span> meeting builds your AI knowledge base.</h3>
-        <p class="card-text">The structured documents, comments, and decisions Meet-e produces become <strong>context your AI agents can use</strong> — searchable, traceable records of how your team thinks and decides. In a world where agent performance is bottlenecked by context quality, everything you document makes your agents smarter.</p>
+        <p class="card-text">Every decision, comment, and sign-off gets captured in structured, searchable, traceable documents. Your AI agents run on context — <strong>this is how you build it.</strong> Every meeting you don't hold still makes your team smarter.</p>
       </div>
     </div>
 
@@ -254,62 +228,82 @@
       <div class="timeline-container">
         <div class="timeline">
           <div class="phase phase-1">
-            <div class="phase-title" style="color: var(--phase-1);">PRE-READ</div>
-            <div class="phase-sub">Read document</div>
+            <div class="phase-title" style="color: var(--phase-1);">READ</div>
+            <div class="phase-sub">Prepare your thoughts.</div>
           </div>
           <div class="phase phase-2">
             <div class="phase-title" style="color: var(--phase-2);">COMMENT</div>
-            <div class="phase-sub">Add feedback</div>
+            <div class="phase-sub">Work async, at your pace.</div>
           </div>
           <div class="phase phase-3">
-            <div class="phase-title" style="color: var(--phase-3);">REFLECT</div>
-            <div class="phase-sub">Resolve threads</div>
+            <div class="phase-title" style="color: var(--phase-3);">RESOLVE</div>
+            <div class="phase-sub">Close open threads.</div>
           </div>
           <div class="phase phase-4">
             <div class="phase-title" style="color: var(--phase-4);">APPROVE</div>
-            <div class="phase-sub">Sign off</div>
+            <div class="phase-sub">Sign off.</div>
           </div>
           <div class="phase phase-5">
-            <div class="phase-title" style="color: var(--phase-5);">📅 DEADLINE</div>
+            <div class="phase-title" style="color: var(--phase-5);">🎉 DONE</div>
+            <div class="phase-sub">Meeting cancelled.</div>
           </div>
         </div>
-        <p class="card-text" style="font-size: 0.95rem; text-align: center; font-weight: 500; color: #e2e8f0;">The best meeting assistant is the one that cancels the meeting.</p>
       </div>
     </div>
 
     <div class="card kpi-card">
       <div class="kpi-number">~70%</div>
-      <div class="kpi-label">of meetings never<br>need to happen 🚀</div>
+      <div class="kpi-label">of meetings never<br>need to happen 🚀 ... Agree?</div>
     </div>
 
     <div class="card">
       <div class="col-icon">📋</div>
-      <h3 class="col-title">Structured by design</h3>
-      <p class="card-text">Organizer picks a document template (decision record, kickoff, retro) and sets timing.</p>
+      <h3 class="col-title">Pick a template. Set a deadline.</h3>
+      <p class="card-text">Decision record, planning, retro, alignment — pick the format that fits. The structure does the work for you.</p>
     </div>
 
     <div class="card">
       <div class="col-icon">🤖</div>
-      <h3 class="col-title">AI does the herding</h3>
-      <p class="card-text">AI posts phase announcements, nudges silent reviewers, generates the final summary.</p>
+      <h3 class="col-title">AI does the follow-up.</h3>
+      <p class="card-text"><strong>Meet-e</strong> posts announcements, tracks progress, nudges silent participants and generates knowledge from all interactions.</p>
     </div>
 
     <div class="card">
       <div class="col-icon">📊</div>
-      <h3 class="col-title">Tracks hours saved</h3>
-      <p class="card-text">Every meeting that doesn't happen is time your team gets back. Meet-e keeps score.</p>
+      <h3 class="col-title">See exactly what you got back.</h3>
+      <p class="card-text">Every meeting that doesn't happen is time your team spends focused. Meet-e keeps score.</p>
     </div>
 
+    <p style="text-align: center; font-size: 1.8rem; font-weight: 700; color: #e2e8f0; margin: 0.5rem 0 2rem; grid-column: span 3; letter-spacing: -0.02em;">The best meeting assistant is the one that cancels the meeting.</p>
+
     <div class="card span-3">
-      <div class="card-label label-neutral">Works with your stack — whatever it is</div>
-      <p class="card-text" style="margin-bottom: 1.5rem;">Meet-e is tool-agnostic by design. Swap in your document platform, your calendar, your notification channel. Got Notion instead of Confluence? SharePoint instead of GitHub? Teams instead of Slack? <strong>It adapts.</strong> The protocol is the same — only the connectors change.</p>
+      <div class="card-label label-neutral">Your tools. </div>
+      <p class="card-text" style="margin-bottom: 1.5rem;">You tell <strong>Meet-e</strong> what to use. Plug in your document platform, your calendar, your chat. Notion or Confluence. Slack or Teams. GitHub or SharePoint. <strong>It works.</strong> Same flow. Different connectors.</p>
       <div class="stack-row">
-        <div class="stack-pill">GitHub (config + state)</div>
-        <div class="stack-pill">Confluence (document + comments)</div>
-        <div class="stack-pill">Claude Code (AI agent)</div>
-        <div class="stack-pill">Outlook / iOS Calendar (trigger)</div>
-        <div class="stack-pill">Jira (v2 — task tracking)</div>
-        <div class="stack-pill">Slack (v2 — notifications)</div>
+        <div class="stack-pill">GitHub</div>
+        <div class="stack-pill">Confluence</div>
+        <div class="stack-pill">Claude</div>
+        <div class="stack-pill">Outlook</div>
+        <div class="stack-pill">iOS Calendar</div>
+        <div class="stack-pill">Jira</div>
+        <div class="stack-pill">Slack</div>
+        <div class="stack-pill">Notion</div>
+        <div class="stack-pill">Microsoft Teams</div>
+        <div class="stack-pill">Google Meet</div>
+        <div class="stack-pill">Zoom</div>
+        <div class="stack-pill">Google Calendar</div>
+        <div class="stack-pill">SharePoint</div>
+        <div class="stack-pill">Linear</div>
+        <div class="stack-pill">Asana</div>
+        <div class="stack-pill">Monday.com</div>
+        <div class="stack-pill">Trello</div>
+        <div class="stack-pill">Notion AI</div>
+        <div class="stack-pill">OpenAI</div>
+        <div class="stack-pill">Gemini</div>
+        <div class="stack-pill">Azure DevOps</div>
+        <div class="stack-pill">Miro</div>
+        <div class="stack-pill">Loom</div>
+        <div class="stack-pill">Webex</div>
       </div>
     </div>
 
@@ -318,7 +312,7 @@
   <div class="footer-bar">
     <div>
       <div class="footer-left-sub">Async-first. AI-supervised.</div>
-      <div class="tagline">Join the meeting that cancels itself.</div>
+      <div class="tagline">Stop holding meetings. Start closing them.</div>
     </div>
     <div class="version">Meet-e v1 · 2026</div>
   </div>
